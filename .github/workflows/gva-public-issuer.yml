@@ -1,0 +1,59 @@
+name: VERIMETRIUM Free Public GVA Issuer
+on:
+  issues:
+    types: [opened]
+permissions:
+  contents: read
+  issues: read
+concurrency:
+  group: gva-single-public-writer
+  cancel-in-progress: false
+jobs:
+  issue-version:
+    if: github.event.issue.title == 'GVA OFFICIAL VERSION REQUEST' && github.event.issue.user.login == 'jannowaldorf-code'
+    runs-on: ubuntu-latest
+    steps:
+      - name: App-scoped short-lived token
+        id: app
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.GVA_APP_CLIENT_ID }}
+          private-key: ${{ secrets.GVA_APP_PRIVATE_KEY }}
+          owner: jannowaldorf-code
+          repositories: verimetrium-version-authority
+          permission-contents: write
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ steps.app.outputs.token }}
+          persist-credentials: true
+      - name: Verify public ledger and contracts
+        run: |
+          set -euo pipefail
+          python gva/issuer.py verify
+          python -m unittest discover -s gva/tests -v
+      - name: Allocate one number from trusted main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B main origin/main
+          python gva/issuer.py issue --event "$GITHUB_EVENT_PATH"
+          git config user.name 'verimetrium-gva-issuer[bot]'
+          git config user.email 'verimetrium-gva-issuer[bot]@users.noreply.github.com'
+          git add gva/registry.json
+          git commit -m 'GVA: issue next immutable global version'
+          git push origin HEAD:main
+      - name: Verify remote commit and version
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git show origin/main:gva/registry.json > /tmp/remote-gva.json
+          python - <<'PY'
+          import json,os
+          remote=json.load(open('/tmp/remote-gva.json'))
+          request=json.load(open(os.environ['GITHUB_EVENT_PATH']))
+          expected=json.loads(request['issue']['body'])['expected_next']
+          assert remote['releases'][-1]['version']==expected
+          print('PASS_REMOTE_PUBLIC_GVA_ISSUED',expected)
+          PY
