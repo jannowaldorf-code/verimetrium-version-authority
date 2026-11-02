@@ -1,0 +1,64 @@
+{
+  "schema": 5,
+  "authority": "jannowaldorf-code/verimetrium-version-authority",
+  "visibility": "PUBLIC_METADATA_ONLY",
+  "legacy_anchor_sha256": "f9c07c964b68459366b0fe31273681e665feb1c4a8208b85a561c07cfa5cc27f",
+  "next": "V1005.00",
+  "releases": [
+    {
+      "version": "V1000.00",
+      "system": "SYS",
+      "role": "BASE",
+      "work": "GVA-K01",
+      "source_set_sha256": "588ad193efca868a7428e4040a887236d3059763f1ea0df1b25c3f30c78536fd",
+      "origin": "LEGACY_IMPORT",
+      "legacy_seal": "8e194e458ec6212ec336fe051634621d41ba0baca5eccccb62aac9170b804ba1",
+      "previous_entry_sha256": null,
+      "entry_sha256": "12f3f8377475d1629fff6a3fae3adfe7695b8271df457439cdb7ce870c562cea"
+    },
+    {
+      "version": "V1001.00",
+      "system": "SYS",
+      "role": "DEV",
+      "work": "GVA-K02",
+      "source_set_sha256": "c30a7088fa062ff222b7a2639d0735ea60b44383c24057bafa2c83bdebf42bd5",
+      "origin": "LEGACY_IMPORT",
+      "legacy_seal": "9406fd6c15c5bae1bb24d4c3a97fc8269644094e5e012bedc1ae22eb33f5a7b9",
+      "previous_entry_sha256": "12f3f8377475d1629fff6a3fae3adfe7695b8271df457439cdb7ce870c562cea",
+      "entry_sha256": "d49f41306c370c97db0f118a7dc806913a35f09d29280b785c1e0f77f58c4145"
+    },
+    {
+      "version": "V1002.00",
+      "system": "SYS",
+      "role": "DEV",
+      "work": "GVA-K03-GITHUB",
+      "source_set_sha256": "42aefb317f1e73bba535cf0889f76292f10628c77828e965811a2ddd783a8ce0",
+      "origin": "LEGACY_IMPORT",
+      "legacy_seal": "3e507747f6366e51602f79e075c28ce507a9b9d303d27ea999c1524827dc416e",
+      "previous_entry_sha256": "d49f41306c370c97db0f118a7dc806913a35f09d29280b785c1e0f77f58c4145",
+      "entry_sha256": "84fcb8397a1c1cc8b041409748a766fd995a3bed750ce2665f67921312c96cc6"
+    },
+    {
+      "version": "V1003.00",
+      "system": "SYS",
+      "role": "AUD",
+      "work": "GVA-K04-REMOTE-ISSUE",
+      "source_set_sha256": "a4c0b9e4fcea9f772d39373500b0dfc92e26b6295230607b747f0207af889d8a",
+      "origin": "LEGACY_IMPORT",
+      "legacy_seal": "081ef8013157ddc5ab9b10b0326e0456314cd9babd4d69838f6decfaf972371c",
+      "previous_entry_sha256": "84fcb8397a1c1cc8b041409748a766fd995a3bed750ce2665f67921312c96cc6",
+      "entry_sha256": "ce1e8c324c8dd61d38907f6046c978e1b526a555f484155182fb9199e69fa019"
+    },
+    {
+      "version": "V1004.00",
+      "system": "SYS",
+      "role": "DEV",
+      "work": "GVA-K04-DYNAMIC-REGISTRY-TEST-FIX",
+      "source_set_sha256": "b551ab641748ad76102b4e67d7ff514a7255f4b64bd247317f44fa0e0824bba7",
+      "origin": "LEGACY_IMPORT",
+      "legacy_seal": "b3c8d4d201c211b290a3dd5047a5a4d292955b3e1897ae75e7b6c021bbad557b",
+      "previous_entry_sha256": "ce1e8c324c8dd61d38907f6046c978e1b526a555f484155182fb9199e69fa019",
+      "entry_sha256": "1bbc82c575477e4a2c56bbc359fa12ef0ca2dc99b786e4638658479b9dc670a9"
+    }
+  ]
+}
