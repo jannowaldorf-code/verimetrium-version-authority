@@ -3,7 +3,7 @@
   "authority": "jannowaldorf-code/verimetrium-version-authority",
   "visibility": "PUBLIC_METADATA_ONLY",
   "legacy_anchor_sha256": "f9c07c964b68459366b0fe31273681e665feb1c4a8208b85a561c07cfa5cc27f",
-  "next": "V1005.00",
+  "next": "V1006.00",
   "releases": [
     {
       "version": "V1000.00",
@@ -59,6 +59,17 @@
       "legacy_seal": "b3c8d4d201c211b290a3dd5047a5a4d292955b3e1897ae75e7b6c021bbad557b",
       "previous_entry_sha256": "ce1e8c324c8dd61d38907f6046c978e1b526a555f484155182fb9199e69fa019",
       "entry_sha256": "1bbc82c575477e4a2c56bbc359fa12ef0ca2dc99b786e4638658479b9dc670a9"
+    },
+    {
+      "version": "V1005.00",
+      "system": "SYS",
+      "role": "AUD",
+      "work": "GVA-K05-PUBLIC-APP-SMOKE",
+      "source_set_sha256": "c8b07afa0c4eb69f53196a9769aa03c9cae7db1242eb1c95d999d9b9cb2b650a",
+      "origin": "PUBLIC_GITHUB_APP",
+      "issue_number": 1,
+      "previous_entry_sha256": "1bbc82c575477e4a2c56bbc359fa12ef0ca2dc99b786e4638658479b9dc670a9",
+      "entry_sha256": "23cf0c86238026b97306253f8f639bee895b1b7fb0fe935e0bbd32a34129bcc9"
     }
   ]
 }
