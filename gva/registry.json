@@ -3,7 +3,7 @@
   "authority": "jannowaldorf-code/verimetrium-version-authority",
   "visibility": "PUBLIC_METADATA_ONLY",
   "legacy_anchor_sha256": "f9c07c964b68459366b0fe31273681e665feb1c4a8208b85a561c07cfa5cc27f",
-  "next": "V1007.00",
+  "next": "V1008.00",
   "releases": [
     {
       "version": "V1000.00",
@@ -81,6 +81,17 @@
       "issue_number": 2,
       "previous_entry_sha256": "23cf0c86238026b97306253f8f639bee895b1b7fb0fe935e0bbd32a34129bcc9",
       "entry_sha256": "844255e970fd287626bb6525ed3b0e3435ed7d790346312f5c57745bbf0586df"
+    },
+    {
+      "version": "V1007.00",
+      "system": "MT5",
+      "role": "DEV",
+      "work": "MT5-VIS-01",
+      "source_set_sha256": "3a6255b59996f117c1a86dad0fd701750344a1bfcee2ae45e00b623434edb375",
+      "origin": "PUBLIC_GITHUB_APP",
+      "issue_number": 4,
+      "previous_entry_sha256": "844255e970fd287626bb6525ed3b0e3435ed7d790346312f5c57745bbf0586df",
+      "entry_sha256": "11f33b3d115d5264c319139c2aa9712b21560226cf3e17be9117876ba37bb2fb"
     }
   ]
 }
