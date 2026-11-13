@@ -182,8 +182,12 @@ switch ($Action) {
             $null = Invoke-Gh -ArgsList @('repo','create',$Repo,'--private','--add-readme','--description','Private VERIMETRIUM immutable SHA-256 checked release assets. No global version issuance.')
         }
         Assert-Private
-        # Enable GitHub native immutable releases; GitHub may require admin permissions.
-        $null = Invoke-Gh -ArgsList @('api','--method','PUT',('repos/' + $Repo + '/immutable-releases'))
+        # GET returns HTTP 200 when enabled and 404 when disabled. Do not PUT again
+        # when the setting is already enabled (including owner-enforced policy).
+        $immutable = @(& gh api ('repos/' + $Repo + '/immutable-releases') 2>$null)
+        if ($LASTEXITCODE -ne 0) {
+            $null = Invoke-Gh -ArgsList @('api','--method','PUT',('repos/' + $Repo + '/immutable-releases'))
+        }
         Assert-ImmutableReleases
         Write-Host ('PASS PRIVATE RELEASE REPOSITORY: ' + $Repo) -ForegroundColor Green
         Write-Host 'No global GVA version number was issued or modified.'
