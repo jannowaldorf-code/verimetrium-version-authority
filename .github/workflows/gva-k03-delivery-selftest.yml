@@ -1,0 +1,21 @@
+name: GVA-K03 private delivery offline Windows validation
+on:
+  pull_request:
+    paths:
+      - 'gva/delivery/**'
+      - '.github/workflows/gva-k03-delivery-selftest.yml'
+  push:
+    branches:
+      - 'gva-k03-private-release-delivery'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows-powershell-5:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Offline positive and tamper-rejection checks (PowerShell 5.1)
+        shell: powershell
+        run: .\gva\delivery\GVA_K03_RELEASE_DELIVERY.ps1 -Action SelfTest
